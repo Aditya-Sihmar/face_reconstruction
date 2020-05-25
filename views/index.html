@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Image Regeneration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="/index" class="brand-logo">Facial Image Regeneration</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="*">About</a></li>
+            <li><a href="*">Contact</a></li>
+            <li><a href="*">Sign Up</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+          <div class="row">
+              <div class="col m3" id="column1">
+                <form  action="/index" method="POST" enctype="multipart/form-data">
+                    <div class="file-field input-field">
+                      <div class="btn">
+                        <span>File</span>
+                        <input type="file" name="myFile" onchange="previewFile()">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" value="">
+                      </div>
+                    </div>
+                  <button type="submit" class="btn waves-effect waves-light">Submit</button>
+                </form>
+              </div>
+              <div class="col m9 m-3" id="image">
+                <img src="" class=" img-fluid" id="previewImage" alt="Image Preview...">
+              </div>
+          </div>
+      </div>
+      <script src="/scripts/index.js"></script>
+</body>
+</html>
+
