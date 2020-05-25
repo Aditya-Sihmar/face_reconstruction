@@ -8,7 +8,7 @@ import os
 import cv2
 from tqdm import tqdm
 import random
-Path1=input("Enter Path Of Image")
+#Path1=input("Enter Path Of Image")
 class Downgrade():
     '''
     This is the class to downsample the dataset. It adds various type of noises in the data.
@@ -90,8 +90,8 @@ class Downgrade():
                     output[i][j] = img[i][j]
         return output
 #We have to change this path. It will be fixed according to the system.
-path1 = input("Enter Path 1")
-
+path1 = 'D:\Volume D\STUDY\ml project\original images'
+#path1 updated,it needs to be changed according to system
 noisy1 = []
 orgnl1 = []
 agmt = Downgrade()
