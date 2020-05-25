@@ -89,7 +89,7 @@ class Downgrade():
                 else:
                     output[i][j] = img[i][j]
         return output
-
+#We have to change this path. It will be fixed according to the system.
 path1 = input("Enter Path 1")
 
 noisy1 = []
@@ -105,8 +105,9 @@ for s in tqdm(os.listdir(path1)):
 
   wpath1 = 'D:\Volume D\STUDY\ml project\downgraded images'
   #WE MUST CHANGE WPATH1 ACCORDING TO SYSTEM WE SHOW PROGRAM IN
-  a = '1'
+  name = '1'
+  #We have to change this variable 'name' according to the name of the file we are processing. 
   for q in tqdm(noisy1):
       img = PIL.Image.fromarray((q).astype(np.uint8))
-      img.save(os.path.join(wpath1, a) + '.jpeg')
-      a = str(int(a) + 1)
+      img.save(os.path.join(wpath1, name) + '.jpeg')
+      name = str(int(name) + 1)
