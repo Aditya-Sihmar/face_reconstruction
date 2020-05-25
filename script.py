@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,7 +9,6 @@ import os
 import cv2
 from tqdm import tqdm
 import random
-Path1=input("Enter Path Of Image")
 class Downgrade():
     '''
     This is the class to downsample the dataset. It adds various type of noises in the data.
@@ -90,24 +90,19 @@ class Downgrade():
                     output[i][j] = img[i][j]
         return output
 #We have to change this path. It will be fixed according to the system.
-path1 = input("Enter Path 1")
-
-noisy1 = []
-orgnl1 = []
+Path1='public/images'
+name = sys.argv[1]
 agmt = Downgrade()
-a = 0
-for s in tqdm(os.listdir(path1)):
-  pht = cv2.imread(os.path.join(path1, s), 0)
-  orgnl1.append(pht)
-  img = agmt.rndm_noise(pht)
-  noisy1.append(img)
-  a+=1
 
-  wpath1 = 'D:\Volume D\STUDY\ml project\downgraded images'
-  #WE MUST CHANGE WPATH1 ACCORDING TO SYSTEM WE SHOW PROGRAM IN
-  name = '1'
-  #We have to change this variable 'name' according to the name of the file we are processing. 
-  for q in tqdm(noisy1):
-      img = PIL.Image.fromarray((q).astype(np.uint8))
-      img.save(os.path.join(wpath1, name) + '.jpeg')
-      name = str(int(name) + 1)
+orgnl = cv2.imread(os.path.join(Path1, name), 0)
+print("image loaded")
+
+noisy = agmt.rndm_noise(orgnl)
+print("noise added")
+
+wpath1 = 'public/images'
+img = PIL.Image.fromarray((noisy).astype(np.uint8))
+svname = 'noisy_' + name 
+img.save(os.path.join(wpath1, svname))
+
+print("noisy image saved")

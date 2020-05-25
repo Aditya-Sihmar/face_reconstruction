@@ -74,6 +74,7 @@ app.post('/index',  (req, res) => {
                     python.stdout.on('data', function (data) {
                     //console.log('Pipe data from python script ...');
                     dataToSend = data.toString();
+                        console.log(dataToSend);
                     });
                     // in close event we are sure that stream from child process is closed
                     python.on('close', (code) => {
@@ -87,7 +88,7 @@ app.post('/index',  (req, res) => {
     });
     uploading
     .then( a => {
-            
+        //res.redirect('/result');    
     });
 });
 
