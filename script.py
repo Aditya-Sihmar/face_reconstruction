@@ -93,10 +93,8 @@ try:
     #We have to change this path. It will be fixed according to the system.
     Path1='public/images'
     name = sys.argv[1]
-    path1 = 'D:\Volume D\STUDY\ml project\original images'
+    #path1 = 'D:\Volume D\STUDY\ml project\original images'
     #path1 updated,it needs to be changed according to system
-    noisy1 = []
-    orgnl1 = []
     agmt = Downgrade()
 
     orgnl = cv2.imread(os.path.join(Path1, name), 0)
