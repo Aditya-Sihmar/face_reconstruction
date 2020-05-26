@@ -111,5 +111,6 @@ try:
     img.save(os.path.join(wpath1, svname))
 
     print("noisy image saved")
+
 except:
     print("There is some error in the script")
